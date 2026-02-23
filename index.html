@@ -6,78 +6,140 @@
 <title>Cardápio - Ateliê 27</title>
 
 <style>
+
 body {
     margin: 0;
-    font-family: Arial, sans-serif;
-    background-color: #f8f8f8;
-    text-align: center;
+    background-color: #fffaeb;
+    font-family: 'Sirenik', serif;
+    color: #3a3a3a;
 }
 
 .container {
+    max-width: 900px;
+    margin: auto;
     padding: 40px 20px;
 }
 
 h1 {
-    color: #b22222;
-    font-size: 36px;
+    font-size: 60px;
+    font-weight: normal;
+    margin-bottom: 30px;
 }
 
-.subtitulo {
-    margin-bottom: 40px;
-    color: #555;
+.categoria {
+    margin-top: 40px;
 }
 
-.card {
-    background: white;
-    padding: 20px;
-    margin: 20px auto;
-    max-width: 350px;
-    border-radius: 15px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+.categoria h2 {
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+.sabores {
+    font-size: 18px;
+    margin-bottom: 15px;
+    color: #6b6b6b;
+}
+
+.tabela {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    max-width: 400px;
+}
+
+.linha {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px dashed #d4a017;
+    padding-bottom: 4px;
+}
+
+.tipo {
+    font-size: 16px;
 }
 
 .preco {
-    color: #c9a227;
-    font-weight: bold;
-    font-size: 18px;
-    margin-top: 10px;
+    font-size: 16px;
 }
 
-.botao {
-    display: inline-block;
-    margin-top: 30px;
-    padding: 12px 20px;
-    background-color: #b22222;
-    color: white;
-    text-decoration: none;
-    border-radius: 8px;
+@media (max-width: 600px) {
+    h1 {
+        font-size: 40px;
+    }
 }
+
 </style>
 </head>
 
 <body>
 
 <div class="container">
-    <h1>Ateliê 27</h1>
-    <p class="subtitulo">Experiência em forma de doce 🍫</p>
 
-    <div class="card">
-        <h2>25 Brigadeiros</h2>
-        <p>Sabores variados</p>
-        <p class="preco">R$ 50,00</p>
+<img src="logo.png" alt="Logo Ateliê 27" class="logo">
+<h1>Brigadeiros</h1>
+
+<!-- Tradicional -->
+<div class="categoria">
+    <h2>Tradicional</h2>
+    <div class="sabores">Sabores: Tradicional / Beijinho / Casadinho</div>
+
+    <div class="tabela">
+        <div class="linha"><div class="tipo">Unidade</div><div class="preco">R$2.50</div></div>
+        <div class="linha"><div class="tipo">25 unidades</div><div class="preco">R$55.00</div></div>
+        <div class="linha"><div class="tipo">50 unidades</div><div class="preco">R$95.00</div></div>
+        <div class="linha"><div class="tipo">100 unidades</div><div class="preco">R$180.00</div></div>
     </div>
+</div>
 
-    <div class="card">
-        <h2>50 Brigadeiros</h2>
-        <p class="preco">R$ 80,00</p>
+<!-- Limão -->
+<div class="categoria">
+    <h2>Limão / Maracujá / Ninho</h2>
+
+    <div class="tabela">
+        <div class="linha"><div class="tipo">Unidade</div><div class="preco">R$2.80</div></div>
+        <div class="linha"><div class="tipo">25 unidades</div><div class="preco">R$60.00</div></div>
+        <div class="linha"><div class="tipo">50 unidades</div><div class="preco">R$100.00</div></div>
+        <div class="linha"><div class="tipo">100 unidades</div><div class="preco">R$180.00</div></div>
     </div>
+</div>
 
-    <div class="card">
-        <h2>100 Brigadeiros</h2>
-        <p class="preco">R$ 160,00</p>
+<!-- Churros -->
+<div class="categoria">
+    <h2>Churros</h2>
+
+    <div class="tabela">
+        <div class="linha"><div class="tipo">Unidade</div><div class="preco">R$3.00</div></div>
+        <div class="linha"><div class="tipo">25 unidades</div><div class="preco">R$65.00</div></div>
+        <div class="linha"><div class="tipo">50 unidades</div><div class="preco">R$95.00</div></div>
+        <div class="linha"><div class="tipo">100 unidades</div><div class="preco">R$180.00</div></div>
     </div>
+</div>
 
-    <a class="botao" href="https://wa.me/SEUNUMEROAQUI">Fazer Pedido no WhatsApp</a>
+<!-- Black -->
+<div class="categoria">
+    <h2>Black</h2>
+
+    <div class="tabela">
+        <div class="linha"><div class="tipo">Unidade</div><div class="preco">R$3.10</div></div>
+        <div class="linha"><div class="tipo">25 unidades</div><div class="preco">R$70.00</div></div>
+        <div class="linha"><div class="tipo">50 unidades</div><div class="preco">R$110.00</div></div>
+        <div class="linha"><div class="tipo">100 unidades</div><div class="preco">R$200.00</div></div>
+    </div>
+</div>
+
+<!-- Ninho com Nutella -->
+<div class="categoria">
+    <h2>Ninho com Nutella</h2>
+
+    <div class="tabela">
+        <div class="linha"><div class="tipo">Unidade</div><div class="preco">R$3.20</div></div>
+        <div class="linha"><div class="tipo">25 unidades</div><div class="preco">R$75.00</div></div>
+        <div class="linha"><div class="tipo">50 unidades</div><div class="preco">R$130.00</div></div>
+        <div class="linha"><div class="tipo">100 unidades</div><div class="preco">R$245.00</div></div>
+    </div>
+</div>
+
 </div>
 
 </body>
