@@ -10,70 +10,74 @@
 
 body{
     margin:0;
-    background:#fff6dc;
-    font-family:'Sirenik', serif;
+    background:#fffaeb;
+    font-family:'Serenik', serif;
     color:#3a352f;
 }
 
 .container{
-    width:85%;
+    width:80%;
+    max-width:1200px;
     margin:auto;
     padding:80px 0;
 }
 
 h1{
     text-align:center;
-    font-size:60px;
-    margin-bottom:70px;
-    letter-spacing:2px;
+    font-size:65px;
+    margin-bottom:80px;
+    letter-spacing:3px;
 }
 
 .menu{
     display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:60px;
+    grid-template-columns:repeat(auto-fit, minmax(350px,1fr));
+    gap:50px;
 }
 
 .card{
-    background:#fff6c; /* creme sofisticado */
-    border-radius:20px;
+    background:#fff6dd;
+    border-radius:25px;
     overflow:hidden;
-    box-shadow:0 15px 40px rgba(0,0,0,0.08);
-    transition:all 0.4s ease;
+    box-shadow:0 20px 50px rgba(0,0,0,0.08);
+    transition:0.4s ease;
+    display:flex;
+    flex-direction:column;
 }
 
 .card:hover{
-    transform:translateY(-8px);
-    box-shadow:0 25px 60px rgba(0,0,0,0.12);
+    transform:translateY(-10px);
+    box-shadow:0 30px 70px rgba(0,0,0,0.12);
 }
 
 .card img{
     width:100%;
-    height:240px;
+    height:260px;
     object-fit:cover;
 }
 
 .content{
     padding:30px;
+    flex:1;
 }
 
 .content h2{
-    margin:0;
     font-size:28px;
+    margin-bottom:15px;
 }
 
 .descricao{
-    margin:18px 0;
     font-size:16px;
-    line-height:1.7;
+    line-height:1.8;
     color:#5a5248;
+    margin-bottom:20px;
 }
 
 button{
     background:#d4a017;
     border:none;
-    padding:10px 20px;
-    border-radius:30px;
+    padding:10px 22px;
+    border-radius:40px;
     cursor:pointer;
     font-family:'Sirenik', serif;
     transition:0.3s;
@@ -88,24 +92,24 @@ button:hover{
     max-height:0;
     overflow:hidden;
     transition:max-height 0.6s ease;
-    margin-top:15px;
 }
 
 .valores p{
-    margin:10px 0;
     display:flex;
     justify-content:space-between;
     border-bottom:1px dashed #c9a227;
-    padding-bottom:6px;
+    padding:8px 0;
+    margin:0;
 }
 
 .card.active .valores{
     max-height:400px;
+    margin-top:20px;
 }
 
-@media(max-width:900px){
-    .menu{
-        grid-template-columns:1fr;
+@media(max-width:768px){
+    h1{
+        font-size:45px;
     }
 }
 
@@ -122,11 +126,11 @@ button:hover{
 
 <!-- TRADICIONAL -->
 <div class="card">
-<img src="https://images.unsplash.com/photo-1606313564200-e75d5e30476b">
+<img src="https://source.unsplash.com/600x600/?brigadeiro">
 <div class="content">
 <h2>Tradicional</h2>
 <div class="descricao">
-Uma releitura clássica do brigadeiro brasileiro, preparado com leite condensado selecionado, creme de leite fresco e chocolate 50% cacau, finalizado com delicado granulado premium. Textura cremosa, sabor intenso e equilíbrio perfeito entre doçura e sofisticação.
+O clássico brasileiro em sua forma mais elegante. Leite condensado cremoso, creme de leite fresco e chocolate 50% cacau cuidadosamente equilibrados, finalizados com granulado premium que envolve cada unidade em textura delicada e sabor marcante.
 </div>
 <button onclick="toggleCard(this)">Ver Valores</button>
 <div class="valores">
@@ -140,11 +144,11 @@ Uma releitura clássica do brigadeiro brasileiro, preparado com leite condensado
 
 <!-- BEIJINHO -->
 <div class="card">
-<img src="https://images.unsplash.com/photo-1621939514649-280e2ee25f60">
+<img src="https://source.unsplash.com/600x600/?coconut,candy">
 <div class="content">
 <h2>Beijinho</h2>
 <div class="descricao">
-Uma experiência tropical refinada. Leite condensado e creme de leite harmonizados com coco ralado nobre, proporcionando maciez e aroma marcante. Finalizado com coco delicadamente polvilhado para uma apresentação elegante e irresistível.
+Notas tropicais refinadas. A suavidade do leite condensado encontra o coco ralado selecionado, criando uma experiência cremosa, aromática e delicadamente doce, finalizada com textura leve e elegante.
 </div>
 <button onclick="toggleCard(this)">Ver Valores</button>
 <div class="valores">
@@ -156,11 +160,11 @@ Uma experiência tropical refinada. Leite condensado e creme de leite harmonizad
 
 <!-- CHURROS -->
 <div class="card">
-<img src="https://images.unsplash.com/photo-1606312619344-3a2f2e5c52a0">
+<img src="https://source.unsplash.com/600x600/?churros">
 <div class="content">
 <h2>Churros</h2>
 <div class="descricao">
-Inspirado na confeitaria espanhola, combina a cremosidade do brigadeiro tradicional com notas quentes de canela e um toque generoso de doce de leite. Finalização em açúcar aromatizado que envolve o paladar com elegância e conforto.
+Inspirado na tradição espanhola, combina a cremosidade do brigadeiro com doce de leite artesanal e um toque sutil de canela. Finalizado em açúcar aromatizado para uma experiência quente, envolvente e sofisticada.
 </div>
 <button onclick="toggleCard(this)">Ver Valores</button>
 <div class="valores">
@@ -170,13 +174,88 @@ Inspirado na confeitaria espanhola, combina a cremosidade do brigadeiro tradicio
 </div>
 </div>
 
+<!-- CASADINHO -->
+<div class="card">
+<img src="https://source.unsplash.com/600x600/?chocolate,white,candy">
+<div class="content">
+<h2>Casadinho</h2>
+<div class="descricao">
+A união perfeita entre chocolate e leite em pó. Duas massas harmoniosamente combinadas em uma composição visual sofisticada, finalizadas com açúcar cristal que acrescenta brilho e textura refinada.
+</div>
+<button onclick="toggleCard(this)">Ver Valores</button>
+<div class="valores">
+<p><span>50 unidades</span><span>R$110,00</span></p>
+</div>
+</div>
+</div>
+
+<!-- BLACK -->
+<div class="card">
+<img src="https://source.unsplash.com/600x600/?dark,chocolate,truffle">
+<div class="content">
+<h2>Black</h2>
+<div class="descricao">
+Intenso e contemporâneo. Elaborado com chocolate 100% cacau, apresenta sabor profundo e marcante, com acabamento sofisticado em pó escuro que realça sua personalidade elegante e moderna.
+</div>
+<button onclick="toggleCard(this)">Ver Valores</button>
+<div class="valores">
+<p><span>Unidade</span><span>R$3,10</span></p>
+</div>
+</div>
+</div>
+
+<!-- LIMÃO -->
+<div class="card">
+<img src="https://source.unsplash.com/600x600/?lemon,candy">
+<div class="content">
+<h2>Limão</h2>
+<div class="descricao">
+Refrescante e delicado. A acidez equilibrada do limão se une à base cremosa tradicional, criando contraste sofisticado e finalização leve com raspas cítricas aromáticas.
+</div>
+<button onclick="toggleCard(this)">Ver Valores</button>
+<div class="valores">
+<p><span>Unidade</span><span>R$2,80</span></p>
+</div>
+</div>
+</div>
+
+<!-- MARACUJÁ -->
+<div class="card">
+<img src="https://source.unsplash.com/600x600/?passionfruit,dessert">
+<div class="content">
+<h2>Maracujá</h2>
+<div class="descricao">
+Uma combinação tropical elegante. Base cremosa com notas vibrantes de maracujá e delicada redução artesanal da fruta, proporcionando frescor e sofisticação a cada mordida.
+</div>
+<button onclick="toggleCard(this)">Ver Valores</button>
+<div class="valores">
+<p><span>Unidade</span><span>R$2,80</span></p>
+</div>
+</div>
+</div>
+
+<!-- NINHO -->
+<div class="card">
+<img src="https://source.unsplash.com/600x600/?milk,candy">
+<div class="content">
+<h2>Ninho</h2>
+<div class="descricao">
+Extremamente cremoso e delicado, destaca o leite em pó premium em textura aveludada e sabor suave, com acabamento leve que realça sua elegância minimalista.
+</div>
+<button onclick="toggleCard(this)">Ver Valores</button>
+<div class="valores">
+<p><span>Unidade</span><span>R$2,80</span></p>
+</div>
+</div>
+</div>
+
 <!-- NINHO COM NUTELLA -->
 <div class="card">
-<img src="https://images.unsplash.com/photo-1599785209707-28a3c6a3b8e5">
+<img src="https://source.unsplash.com/600x600/?nutella,dessert">
 <div class="content">
 <h2>Ninho com Nutella</h2>
 <div class="descricao">
-Uma combinação sofisticada de leite em pó premium com textura aveludada e recheio central de creme de avelã. Equilíbrio perfeito entre suavidade e intensidade, criando uma experiência indulgente e memorável.
+Sofisticação indulgente. Massa suave de leite em pó envolvendo um núcleo cremoso de avelã, criando contraste perfeito entre leveza e intensidade.
 </div>
 <button onclick="toggleCard(this)">Ver Valores</button>
 <div class="valores">
@@ -195,12 +274,7 @@ Uma combinação sofisticada de leite em pó premium com textura aveludada e rec
 function toggleCard(button){
     const card = button.closest(".card");
     card.classList.toggle("active");
-
-    if(button.innerText === "Ver Valores"){
-        button.innerText = "Ocultar Valores";
-    } else {
-        button.innerText = "Ver Valores";
-    }
+    button.innerText = card.classList.contains("active") ? "Ocultar Valores" : "Ver Valores";
 }
 </script>
 
