@@ -4,116 +4,104 @@
 <meta charset="UTF-8">
 <title>Ateliê 27 - Brigadeiros</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Sirin+Stencil&family=Sirenik:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Sirenik:wght@400;700&display=swap" rel="stylesheet">
 
 <style>
 
+*{
+    box-sizing:border-box;
+}
+
 body{
     margin:0;
-    background:#F3EBDD; /* creme */
+    background:#F2E9D8; /* creme */
     font-family:'Sirenik', serif;
-    color:#3C352E;
+    color:#3A332C;
 }
 
 .container{
-    width:85%;
-    max-width:1200px;
+    width:90%;
+    max-width:1300px;
     margin:auto;
-    padding:80px 0;
+    padding:60px 0;
 }
 
 h1{
     text-align:center;
-    font-size:64px;
-    margin-bottom:70px;
-    letter-spacing:2px;
+    font-size:58px;
+    margin-bottom:50px;
     font-weight:700;
 }
 
 .menu{
     display:grid;
-    grid-template-columns:repeat(auto-fit, minmax(340px,1fr));
-    gap:45px;
+    grid-template-columns:repeat(auto-fit, minmax(300px,1fr));
+    gap:40px;
 }
 
 .card{
-    background:#FBF6EC; /* mais claro que o fundo */
-    border-radius:28px;
-    overflow:hidden;
-    box-shadow:0 20px 60px rgba(0,0,0,0.06);
-    transition:0.4s ease;
+    background:#FAF4E8; /* um pouco mais claro que o fundo */
+    border-radius:25px;
+    padding:30px;
+    box-shadow:0 15px 40px rgba(0,0,0,0.05);
+    transition:0.3s ease;
     display:flex;
     flex-direction:column;
+    justify-content:space-between;
 }
 
 .card:hover{
-    transform:translateY(-12px);
-    box-shadow:0 30px 80px rgba(0,0,0,0.10);
+    transform:translateY(-8px);
+    box-shadow:0 25px 60px rgba(0,0,0,0.08);
 }
 
-.card img{
-    width:100%;
-    height:250px;
-    object-fit:cover;
-}
-
-.content{
-    padding:30px;
-    flex:1;
-}
-
-.content h2{
-    font-size:28px;
+.card h2{
+    font-size:26px;
     margin-bottom:15px;
-    font-weight:700;
 }
 
 .descricao{
-    font-size:16px;
-    line-height:1.7;
+    font-size:18px;
+    line-height:1.6;
     margin-bottom:20px;
-    color:#5B5148;
 }
 
 button{
-    background:#C6A14A;
+    background:#C7A247;
     border:none;
-    padding:10px 24px;
-    border-radius:40px;
-    cursor:pointer;
+    padding:12px 22px;
+    border-radius:30px;
     font-family:'Sirenik', serif;
-    font-weight:700;
-    transition:0.3s ease;
+    font-size:16px;
+    cursor:pointer;
+    transition:0.3s;
 }
 
 button:hover{
-    background:#B48F3C;
-    transform:scale(1.05);
+    background:#B89134;
 }
 
 .valores{
-    max-height:0;
-    overflow:hidden;
-    transition:max-height 0.6s ease;
+    display:none;
+    margin-top:20px;
+    font-size:17px;
 }
 
 .valores p{
     display:flex;
     justify-content:space-between;
-    border-bottom:1px dashed #D8C6A3;
+    border-bottom:1px dashed #D5C3A1;
     padding:8px 0;
     margin:0;
-    font-size:15px;
 }
 
 .card.active .valores{
-    max-height:400px;
-    margin-top:20px;
+    display:block;
 }
 
 @media(max-width:768px){
     h1{
-        font-size:42px;
+        font-size:40px;
     }
 }
 
@@ -127,12 +115,11 @@ button:hover{
 
 <div class="menu">
 
+<!-- Tradicional -->
 <div class="card">
-<img src="https://source.unsplash.com/600x600/?brigadeiro">
-<div class="content">
 <h2>Tradicional</h2>
 <div class="descricao">
-O clássico brasileiro reinterpretado com elegância. Chocolate 50% cacau, textura cremosa e acabamento premium.
+Chocolate 50% cacau, textura cremosa e finalização premium com granulado refinado.
 </div>
 <button onclick="toggleCard(this)">Ver Valores</button>
 <div class="valores">
@@ -142,6 +129,106 @@ O clássico brasileiro reinterpretado com elegância. Chocolate 50% cacau, textu
 <p><span>100 unidades</span><span>R$180,00</span></p>
 </div>
 </div>
+
+<!-- Beijinho -->
+<div class="card">
+<h2>Beijinho</h2>
+<div class="descricao">
+Leite condensado e coco selecionado, textura suave e delicada.
+</div>
+<button onclick="toggleCard(this)">Ver Valores</button>
+<div class="valores">
+<p><span>Unidade</span><span>R$2,50</span></p>
+<p><span>25 unidades</span><span>R$65,00</span></p>
+</div>
+</div>
+
+<!-- Churros -->
+<div class="card">
+<h2>Churros</h2>
+<div class="descricao">
+Recheado com doce de leite artesanal e toque sutil de canela.
+</div>
+<button onclick="toggleCard(this)">Ver Valores</button>
+<div class="valores">
+<p><span>Unidade</span><span>R$3,00</span></p>
+<p><span>25 unidades</span><span>R$65,00</span></p>
+</div>
+</div>
+
+<!-- Casadinho -->
+<div class="card">
+<h2>Casadinho</h2>
+<div class="descricao">
+Brigadeiro tradicional com leite em pó combinados em perfeita harmonia.
+</div>
+<button onclick="toggleCard(this)">Ver Valores</button>
+<div class="valores">
+<p><span>50 unidades</span><span>R$110,00</span></p>
+</div>
+</div>
+
+<!-- Black -->
+<div class="card">
+<h2>Black</h2>
+<div class="descricao">
+Chocolate 100% cacau, sabor intenso e sofisticado.
+</div>
+<button onclick="toggleCard(this)">Ver Valores</button>
+<div class="valores">
+<p><span>Unidade</span><span>R$3,10</span></p>
+</div>
+</div>
+
+<!-- Limão -->
+<div class="card">
+<h2>Limão</h2>
+<div class="descricao">
+Leve acidez equilibrada com textura cremosa e refrescante.
+</div>
+<button onclick="toggleCard(this)">Ver Valores</button>
+<div class="valores">
+<p><span>Unidade</span><span>R$2,80</span></p>
+</div>
+</div>
+
+<!-- Maracujá -->
+<div class="card">
+<h2>Maracujá</h2>
+<div class="descricao">
+Notas tropicais vibrantes com equilíbrio perfeito entre doce e ácido.
+</div>
+<button onclick="toggleCard(this)">Ver Valores</button>
+<div class="valores">
+<p><span>Unidade</span><span>R$2,80</span></p>
+</div>
+</div>
+
+<!-- Ninho -->
+<div class="card">
+<h2>Ninho</h2>
+<div class="descricao">
+Leite em pó premium com textura extremamente cremosa.
+</div>
+<button onclick="toggleCard(this)">Ver Valores</button>
+<div class="valores">
+<p><span>Unidade</span><span>R$2,80</span></p>
+</div>
+</div>
+
+<!-- Ninho com Nutella -->
+<div class="card">
+<h2>Ninho com Nutella</h2>
+<div class="descricao">
+Massa suave envolvendo núcleo cremoso de avelã.
+</div>
+<button onclick="toggleCard(this)">Ver Valores</button>
+<div class="valores">
+<p><span>Unidade</span><span>R$3,20</span></p>
+<p><span>25 unidades</span><span>R$75,00</span></p>
+<p><span>50 unidades</span><span>R$130,00</span></p>
+<p><span>100 unidades</span><span>R$245,00</span></p>
+</div>
 </div>
 
 </div>
@@ -149,9 +236,11 @@ O clássico brasileiro reinterpretado com elegância. Chocolate 50% cacau, textu
 
 <script>
 function toggleCard(button){
-    const card = button.closest(".card");
+    const card = button.parentElement;
     card.classList.toggle("active");
-    button.innerText = card.classList.contains("active") ? "Ocultar Valores" : "Ver Valores";
+    button.innerText = card.classList.contains("active") 
+        ? "Ocultar Valores" 
+        : "Ver Valores";
 }
 </script>
 
