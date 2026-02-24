@@ -1,79 +1,111 @@
-<!DOCTYPE html>
+<DOCTYPE html>
 <html lang="pt-br">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Cardápio - Ateliê 27</title>
+<title>Ateliê 27 - Brigadeiros</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Sirin+Stencil&display=swap" rel="stylesheet">
 
 <style>
 
-body {
-    margin: 0;
-    background-color: #fffaeb;
-    font-family: 'Sirenik', serif;
-    color: #3a3a3a;
-    display: flex;
-    justify-content: center;
+body{
+    margin:0;
+    background:#fff6dc;
+    font-family:'Sirenik', serif;
+    color:#3a352f;
 }
 
-.container {
-    width: 70%;
-    padding: 80px 0;
+.container{
+    width:85%;
+    margin:auto;
+    padding:80px 0;
 }
 
-h1 {
-    text-align: center;
-    font-size: 70px;
-    font-weight: normal;
-    margin-bottom: 60px;
+h1{
+    text-align:center;
+    font-size:60px;
+    margin-bottom:70px;
+    letter-spacing:2px;
 }
 
-.categoria {
-    margin-top: 60px;
-    width: 100%;
+.menu{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:60px;
 }
 
-.categoria h2 {
-    font-size: 26px;
-    margin-bottom: 8px;
+.card{
+    background:#fff6c; /* creme sofisticado */
+    border-radius:20px;
+    overflow:hidden;
+    box-shadow:0 15px 40px rgba(0,0,0,0.08);
+    transition:all 0.4s ease;
 }
 
-.sabores {
-    font-size: 16px;
-    margin-bottom: 20px;
-    color: #6b6b6b;
+.card:hover{
+    transform:translateY(-8px);
+    box-shadow:0 25px 60px rgba(0,0,0,0.12);
 }
 
-.tabela {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
+.card img{
+    width:100%;
+    height:240px;
+    object-fit:cover;
 }
 
-.linha {
-    display: flex;
-    justify-content: space-between;
-    border-bottom: 0.5px dashed #d4a017;
-    padding-bottom: 6px;
+.content{
+    padding:30px;
 }
 
-.tipo {
-    font-size: 16px;
+.content h2{
+    margin:0;
+    font-size:28px;
 }
 
-.preco {
-    font-size: 16px;
+.descricao{
+    margin:18px 0;
+    font-size:16px;
+    line-height:1.7;
+    color:#5a5248;
 }
 
-/* Responsivo */
-@media (max-width: 900px) {
-    .container {
-        width: 90%;
-    }
+button{
+    background:#d4a017;
+    border:none;
+    padding:10px 20px;
+    border-radius:30px;
+    cursor:pointer;
+    font-family:'Sirenik', serif;
+    transition:0.3s;
+}
 
-    h1 {
-        font-size: 45px;
+button:hover{
+    background:#b8860b;
+    transform:scale(1.05);
+}
+
+.valores{
+    max-height:0;
+    overflow:hidden;
+    transition:max-height 0.6s ease;
+    margin-top:15px;
+}
+
+.valores p{
+    margin:10px 0;
+    display:flex;
+    justify-content:space-between;
+    border-bottom:1px dashed #c9a227;
+    padding-bottom:6px;
+}
+
+.card.active .valores{
+    max-height:400px;
+}
+
+@media(max-width:900px){
+    .menu{
+        grid-template-columns:1fr;
     }
 }
 
@@ -86,68 +118,91 @@ h1 {
 
 <h1>Brigadeiros</h1>
 
-<!-- Tradicional -->
-<div class="categoria">
-    <h2>Tradicional</h2>
-    <div class="sabores">Sabores: Tradicional / Beijinho / Casadinho</div>
+<div class="menu">
 
-    <div class="tabela">
-        <div class="linha"><div class="tipo">Unidade</div><div class="preco">R$2.50</div></div>
-        <div class="linha"><div class="tipo">25 unidades</div><div class="preco">R$55.00</div></div>
-        <div class="linha"><div class="tipo">50 unidades</div><div class="preco">R$95.00</div></div>
-        <div class="linha"><div class="tipo">100 unidades</div><div class="preco">R$180.00</div></div>
-    </div>
+<!-- TRADICIONAL -->
+<div class="card">
+<img src="https://images.unsplash.com/photo-1606313564200-e75d5e30476b">
+<div class="content">
+<h2>Tradicional</h2>
+<div class="descricao">
+Uma releitura clássica do brigadeiro brasileiro, preparado com leite condensado selecionado, creme de leite fresco e chocolate 50% cacau, finalizado com delicado granulado premium. Textura cremosa, sabor intenso e equilíbrio perfeito entre doçura e sofisticação.
+</div>
+<button onclick="toggleCard(this)">Ver Valores</button>
+<div class="valores">
+<p><span>Unidade</span><span>R$2,50</span></p>
+<p><span>25 unidades</span><span>R$65,00</span></p>
+<p><span>50 unidades</span><span>R$95,00</span></p>
+<p><span>100 unidades</span><span>R$180,00</span></p>
+</div>
+</div>
 </div>
 
-<!-- Limão / Maracujá / Ninho -->
-<div class="categoria">
-    <h2>Limão / Maracujá / Ninho</h2>
-
-    <div class="tabela">
-        <div class="linha"><div class="tipo">Unidade</div><div class="preco">R$2.80</div></div>
-        <div class="linha"><div class="tipo">25 unidades</div><div class="preco">R$60.00</div></div>
-        <div class="linha"><div class="tipo">50 unidades</div><div class="preco">R$100.00</div></div>
-        <div class="linha"><div class="tipo">100 unidades</div><div class="preco">R$180.00</div></div>
-    </div>
+<!-- BEIJINHO -->
+<div class="card">
+<img src="https://images.unsplash.com/photo-1621939514649-280e2ee25f60">
+<div class="content">
+<h2>Beijinho</h2>
+<div class="descricao">
+Uma experiência tropical refinada. Leite condensado e creme de leite harmonizados com coco ralado nobre, proporcionando maciez e aroma marcante. Finalizado com coco delicadamente polvilhado para uma apresentação elegante e irresistível.
+</div>
+<button onclick="toggleCard(this)">Ver Valores</button>
+<div class="valores">
+<p><span>Unidade</span><span>R$2,50</span></p>
+<p><span>25 unidades</span><span>R$65,00</span></p>
+</div>
+</div>
 </div>
 
-<!-- Churros -->
-<div class="categoria">
-    <h2>Churros</h2>
-
-    <div class="tabela">
-        <div class="linha"><div class="tipo">Unidade</div><div class="preco">R$3.00</div></div>
-        <div class="linha"><div class="tipo">25 unidades</div><div class="preco">R$65.00</div></div>
-        <div class="linha"><div class="tipo">50 unidades</div><div class="preco">R$95.00</div></div>
-        <div class="linha"><div class="tipo">100 unidades</div><div class="preco">R$180.00</div></div>
-    </div>
+<!-- CHURROS -->
+<div class="card">
+<img src="https://images.unsplash.com/photo-1606312619344-3a2f2e5c52a0">
+<div class="content">
+<h2>Churros</h2>
+<div class="descricao">
+Inspirado na confeitaria espanhola, combina a cremosidade do brigadeiro tradicional com notas quentes de canela e um toque generoso de doce de leite. Finalização em açúcar aromatizado que envolve o paladar com elegância e conforto.
+</div>
+<button onclick="toggleCard(this)">Ver Valores</button>
+<div class="valores">
+<p><span>Unidade</span><span>R$3,00</span></p>
+<p><span>25 unidades</span><span>R$65,00</span></p>
+</div>
+</div>
 </div>
 
-<!-- Black -->
-<div class="categoria">
-    <h2>Black</h2>
-
-    <div class="tabela">
-        <div class="linha"><div class="tipo">Unidade</div><div class="preco">R$3.10</div></div>
-        <div class="linha"><div class="tipo">25 unidades</div><div class="preco">R$70.00</div></div>
-        <div class="linha"><div class="tipo">50 unidades</div><div class="preco">R$110.00</div></div>
-        <div class="linha"><div class="tipo">100 unidades</div><div class="preco">R$200.00</div></div>
-    </div>
+<!-- NINHO COM NUTELLA -->
+<div class="card">
+<img src="https://images.unsplash.com/photo-1599785209707-28a3c6a3b8e5">
+<div class="content">
+<h2>Ninho com Nutella</h2>
+<div class="descricao">
+Uma combinação sofisticada de leite em pó premium com textura aveludada e recheio central de creme de avelã. Equilíbrio perfeito entre suavidade e intensidade, criando uma experiência indulgente e memorável.
 </div>
-
-<!-- Ninho com Nutella -->
-<div class="categoria">
-    <h2>Ninho com Nutella</h2>
-
-    <div class="tabela">
-        <div class="linha"><div class="tipo">Unidade</div><div class="preco">R$3.20</div></div>
-        <div class="linha"><div class="tipo">25 unidades</div><div class="preco">R$75.00</div></div>
-        <div class="linha"><div class="tipo">50 unidades</div><div class="preco">R$130.00</div></div>
-        <div class="linha"><div class="tipo">100 unidades</div><div class="preco">R$245.00</div></div>
-    </div>
+<button onclick="toggleCard(this)">Ver Valores</button>
+<div class="valores">
+<p><span>Unidade</span><span>R$3,20</span></p>
+<p><span>25 unidades</span><span>R$75,00</span></p>
+<p><span>50 unidades</span><span>R$130,00</span></p>
+<p><span>100 unidades</span><span>R$245,00</span></p>
+</div>
+</div>
 </div>
 
 </div>
+</div>
+
+<script>
+function toggleCard(button){
+    const card = button.closest(".card");
+    card.classList.toggle("active");
+
+    if(button.innerText === "Ver Valores"){
+        button.innerText = "Ocultar Valores";
+    } else {
+        button.innerText = "Ver Valores";
+    }
+}
+</script>
 
 </body>
 </html>
