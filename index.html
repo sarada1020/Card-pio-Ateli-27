@@ -4,19 +4,19 @@
 <meta charset="UTF-8">
 <title>Ateliê 27 - Brigadeiros</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Sirin+Stencil&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Sirin+Stencil&family=Sirenik:wght@400;700&display=swap" rel="stylesheet">
 
 <style>
 
 body{
     margin:0;
-    background:#fffaeb;
-    font-family:'Serenik', serif;
-    color:#3a352f;
+    background:#F3EBDD; /* creme */
+    font-family:'Sirenik', serif;
+    color:#3C352E;
 }
 
 .container{
-    width:80%;
+    width:85%;
     max-width:1200px;
     margin:auto;
     padding:80px 0;
@@ -24,35 +24,36 @@ body{
 
 h1{
     text-align:center;
-    font-size:65px;
-    margin-bottom:80px;
-    letter-spacing:3px;
+    font-size:64px;
+    margin-bottom:70px;
+    letter-spacing:2px;
+    font-weight:700;
 }
 
 .menu{
     display:grid;
-    grid-template-columns:repeat(auto-fit, minmax(350px,1fr));
-    gap:50px;
+    grid-template-columns:repeat(auto-fit, minmax(340px,1fr));
+    gap:45px;
 }
 
 .card{
-    background:#fff6dd;
-    border-radius:25px;
+    background:#FBF6EC; /* mais claro que o fundo */
+    border-radius:28px;
     overflow:hidden;
-    box-shadow:0 20px 50px rgba(0,0,0,0.08);
+    box-shadow:0 20px 60px rgba(0,0,0,0.06);
     transition:0.4s ease;
     display:flex;
     flex-direction:column;
 }
 
 .card:hover{
-    transform:translateY(-10px);
-    box-shadow:0 30px 70px rgba(0,0,0,0.12);
+    transform:translateY(-12px);
+    box-shadow:0 30px 80px rgba(0,0,0,0.10);
 }
 
 .card img{
     width:100%;
-    height:260px;
+    height:250px;
     object-fit:cover;
 }
 
@@ -64,27 +65,29 @@ h1{
 .content h2{
     font-size:28px;
     margin-bottom:15px;
+    font-weight:700;
 }
 
 .descricao{
     font-size:16px;
-    line-height:1.8;
-    color:#5a5248;
+    line-height:1.7;
     margin-bottom:20px;
+    color:#5B5148;
 }
 
 button{
-    background:#d4a017;
+    background:#C6A14A;
     border:none;
-    padding:10px 22px;
+    padding:10px 24px;
     border-radius:40px;
     cursor:pointer;
     font-family:'Sirenik', serif;
-    transition:0.3s;
+    font-weight:700;
+    transition:0.3s ease;
 }
 
 button:hover{
-    background:#b8860b;
+    background:#B48F3C;
     transform:scale(1.05);
 }
 
@@ -97,9 +100,10 @@ button:hover{
 .valores p{
     display:flex;
     justify-content:space-between;
-    border-bottom:1px dashed #c9a227;
+    border-bottom:1px dashed #D8C6A3;
     padding:8px 0;
     margin:0;
+    font-size:15px;
 }
 
 .card.active .valores{
@@ -109,7 +113,7 @@ button:hover{
 
 @media(max-width:768px){
     h1{
-        font-size:45px;
+        font-size:42px;
     }
 }
 
@@ -119,18 +123,16 @@ button:hover{
 <body>
 
 <div class="container">
-
 <h1>Brigadeiros</h1>
 
 <div class="menu">
 
-<!-- TRADICIONAL -->
 <div class="card">
 <img src="https://source.unsplash.com/600x600/?brigadeiro">
 <div class="content">
 <h2>Tradicional</h2>
 <div class="descricao">
-O clássico brasileiro em sua forma mais elegante. Leite condensado cremoso, creme de leite fresco e chocolate 50% cacau cuidadosamente equilibrados, finalizados com granulado premium que envolve cada unidade em textura delicada e sabor marcante.
+O clássico brasileiro reinterpretado com elegância. Chocolate 50% cacau, textura cremosa e acabamento premium.
 </div>
 <button onclick="toggleCard(this)">Ver Valores</button>
 <div class="valores">
@@ -138,131 +140,6 @@ O clássico brasileiro em sua forma mais elegante. Leite condensado cremoso, cre
 <p><span>25 unidades</span><span>R$65,00</span></p>
 <p><span>50 unidades</span><span>R$95,00</span></p>
 <p><span>100 unidades</span><span>R$180,00</span></p>
-</div>
-</div>
-</div>
-
-<!-- BEIJINHO -->
-<div class="card">
-<img src="https://source.unsplash.com/600x600/?coconut,candy">
-<div class="content">
-<h2>Beijinho</h2>
-<div class="descricao">
-Notas tropicais refinadas. A suavidade do leite condensado encontra o coco ralado selecionado, criando uma experiência cremosa, aromática e delicadamente doce, finalizada com textura leve e elegante.
-</div>
-<button onclick="toggleCard(this)">Ver Valores</button>
-<div class="valores">
-<p><span>Unidade</span><span>R$2,50</span></p>
-<p><span>25 unidades</span><span>R$65,00</span></p>
-</div>
-</div>
-</div>
-
-<!-- CHURROS -->
-<div class="card">
-<img src="https://source.unsplash.com/600x600/?churros">
-<div class="content">
-<h2>Churros</h2>
-<div class="descricao">
-Inspirado na tradição espanhola, combina a cremosidade do brigadeiro com doce de leite artesanal e um toque sutil de canela. Finalizado em açúcar aromatizado para uma experiência quente, envolvente e sofisticada.
-</div>
-<button onclick="toggleCard(this)">Ver Valores</button>
-<div class="valores">
-<p><span>Unidade</span><span>R$3,00</span></p>
-<p><span>25 unidades</span><span>R$65,00</span></p>
-</div>
-</div>
-</div>
-
-<!-- CASADINHO -->
-<div class="card">
-<img src="https://source.unsplash.com/600x600/?chocolate,white,candy">
-<div class="content">
-<h2>Casadinho</h2>
-<div class="descricao">
-A união perfeita entre chocolate e leite em pó. Duas massas harmoniosamente combinadas em uma composição visual sofisticada, finalizadas com açúcar cristal que acrescenta brilho e textura refinada.
-</div>
-<button onclick="toggleCard(this)">Ver Valores</button>
-<div class="valores">
-<p><span>50 unidades</span><span>R$110,00</span></p>
-</div>
-</div>
-</div>
-
-<!-- BLACK -->
-<div class="card">
-<img src="https://source.unsplash.com/600x600/?dark,chocolate,truffle">
-<div class="content">
-<h2>Black</h2>
-<div class="descricao">
-Intenso e contemporâneo. Elaborado com chocolate 100% cacau, apresenta sabor profundo e marcante, com acabamento sofisticado em pó escuro que realça sua personalidade elegante e moderna.
-</div>
-<button onclick="toggleCard(this)">Ver Valores</button>
-<div class="valores">
-<p><span>Unidade</span><span>R$3,10</span></p>
-</div>
-</div>
-</div>
-
-<!-- LIMÃO -->
-<div class="card">
-<img src="https://source.unsplash.com/600x600/?lemon,candy">
-<div class="content">
-<h2>Limão</h2>
-<div class="descricao">
-Refrescante e delicado. A acidez equilibrada do limão se une à base cremosa tradicional, criando contraste sofisticado e finalização leve com raspas cítricas aromáticas.
-</div>
-<button onclick="toggleCard(this)">Ver Valores</button>
-<div class="valores">
-<p><span>Unidade</span><span>R$2,80</span></p>
-</div>
-</div>
-</div>
-
-<!-- MARACUJÁ -->
-<div class="card">
-<img src="https://source.unsplash.com/600x600/?passionfruit,dessert">
-<div class="content">
-<h2>Maracujá</h2>
-<div class="descricao">
-Uma combinação tropical elegante. Base cremosa com notas vibrantes de maracujá e delicada redução artesanal da fruta, proporcionando frescor e sofisticação a cada mordida.
-</div>
-<button onclick="toggleCard(this)">Ver Valores</button>
-<div class="valores">
-<p><span>Unidade</span><span>R$2,80</span></p>
-</div>
-</div>
-</div>
-
-<!-- NINHO -->
-<div class="card">
-<img src="https://source.unsplash.com/600x600/?milk,candy">
-<div class="content">
-<h2>Ninho</h2>
-<div class="descricao">
-Extremamente cremoso e delicado, destaca o leite em pó premium em textura aveludada e sabor suave, com acabamento leve que realça sua elegância minimalista.
-</div>
-<button onclick="toggleCard(this)">Ver Valores</button>
-<div class="valores">
-<p><span>Unidade</span><span>R$2,80</span></p>
-</div>
-</div>
-</div>
-
-<!-- NINHO COM NUTELLA -->
-<div class="card">
-<img src="https://source.unsplash.com/600x600/?nutella,dessert">
-<div class="content">
-<h2>Ninho com Nutella</h2>
-<div class="descricao">
-Sofisticação indulgente. Massa suave de leite em pó envolvendo um núcleo cremoso de avelã, criando contraste perfeito entre leveza e intensidade.
-</div>
-<button onclick="toggleCard(this)">Ver Valores</button>
-<div class="valores">
-<p><span>Unidade</span><span>R$3,20</span></p>
-<p><span>25 unidades</span><span>R$75,00</span></p>
-<p><span>50 unidades</span><span>R$130,00</span></p>
-<p><span>100 unidades</span><span>R$245,00</span></p>
 </div>
 </div>
 </div>
