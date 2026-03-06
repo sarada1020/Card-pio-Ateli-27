@@ -48,7 +48,6 @@ text-decoration:none;
 margin-left:30px;
 color:#4b280a;
 font-size:18px;
-transition:.3s;
 }
 
 .navbar a:hover{
@@ -78,8 +77,6 @@ max-width:600px;
 margin-bottom:40px;
 }
 
-/* BOTÕES */
-
 .btn{
 background:#C7A247;
 border:none;
@@ -95,7 +92,7 @@ transition:.3s;
 transform:translateY(-3px);
 }
 
-/* LINHA DOURADA ANIMADA */
+/* LINHA */
 
 .linha-dourada{
 width:0;
@@ -118,7 +115,7 @@ margin:auto;
 padding:120px 0;
 }
 
-/* TITULOS */
+/* TITULO */
 
 .section-title{
 text-align:center;
@@ -126,66 +123,11 @@ font-size:52px;
 margin-bottom:20px;
 }
 
-/* HOME CARDS */
-
-.home-grid{
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:50px;
-}
-
-.home-card{
-display:flex;
-align-items:center;
-gap:40px;
-padding:40px;
-border-radius:25px;
-background:#FAF4E8;
-box-shadow:0 15px 40px rgba(0,0,0,0.06);
-transition:.4s;
-opacity:0;
-transform:translateY(40px);
-}
-
-.home-card.show{
-opacity:1;
-transform:translateY(0);
-}
-
-.home-card img{
-width:220px;
-border-radius:20px;
-}
-
-.home-card h3{
-font-size:30px;
-margin-bottom:10px;
-}
-
-/* FEATURE */
-
-.feature{
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:80px;
-align-items:center;
-}
-
-.feature img{
-width:100%;
-border-radius:20px;
-}
-
-.feature h2{
-font-size:40px;
-margin-bottom:15px;
-}
-
-/* FILTRO CARDÁPIO */
+/* FILTRO */
 
 .filtros{
 text-align:center;
-margin-bottom:40px;
+margin-bottom:50px;
 }
 
 .filtros button{
@@ -254,16 +196,16 @@ font-weight:bold;
 color:#4b280a;
 }
 
-/* CAIXAS */
+/* GRID INFO */
 
-.box-grid{
+.info-grid{
 display:grid;
 grid-template-columns:repeat(3,1fr);
 gap:30px;
-margin-top:40px;
+margin-top:50px;
 }
 
-.box-card{
+.info-card{
 background:#FAF4E8;
 padding:35px;
 border-radius:25px;
@@ -271,50 +213,28 @@ text-align:center;
 box-shadow:0 10px 30px rgba(0,0,0,0.05);
 }
 
-/* CONTATO */
-
-.contact{
-text-align:center;
-padding:100px 20px;
-}
-
-.contact p{
-font-size:20px;
-margin:10px 0;
-}
-
-/* WHATSAPP */
+/* WHATSAPP BUTTON */
 
 .whatsapp{
-position:fixed;
-bottom:25px;
-right:25px;
+display:inline-block;
+margin-top:40px;
 background:#25D366;
 color:white;
-padding:16px 20px;
-border-radius:50px;
-font-size:18px;
+padding:16px 30px;
+border-radius:40px;
+font-size:20px;
 text-decoration:none;
-box-shadow:0 10px 30px rgba(0,0,0,0.2);
 }
 
 /* RESPONSIVO */
 
 @media(max-width:900px){
 
-.home-grid{
-grid-template-columns:1fr;
-}
-
-.feature{
-grid-template-columns:1fr;
-}
-
 .menu{
 grid-template-columns:1fr;
 }
 
-.box-grid{
+.info-grid{
 grid-template-columns:1fr;
 }
 
@@ -323,30 +243,25 @@ width:260px;
 }
 
 .section-title{
-font-size:38px;
+font-size:36px;
 }
 
 }
 
 </style>
-
 </head>
 
 <body>
 
-<!-- NAVBAR -->
-
 <div class="navbar">
-
 <div><strong>Ateliê 27</strong></div>
 
 <div>
-<a href="#sobre">Sobre</a>
 <a href="#cardapio">Cardápio</a>
-<a href="#personalizacao">Caixas</a>
+<a href="#caixas">Caixas</a>
+<a href="#informacoes">Informações</a>
 <a href="#contato">Contato</a>
 </div>
-
 </div>
 
 <!-- HERO -->
@@ -364,58 +279,6 @@ Ver Cardápio
 </button>
 
 </section>
-
-<!-- HOME -->
-
-<div class="container">
-
-<div class="home-grid">
-
-<div class="home-card reveal">
-<img src="tradicional.png">
-<div>
-<h3>Sobre o Ateliê</h3>
-<p>Conheça a produção artesanal por trás de cada brigadeiro.</p>
-<button class="btn" onclick="scrollSection('sobre')">Explorar</button>
-</div>
-</div>
-
-<div class="home-card reveal">
-<img src="ninho-nutella.png">
-<div>
-<h3>Cardápio</h3>
-<p>Sabores tradicionais, especiais e premium.</p>
-<button class="btn" onclick="scrollSection('cardapio')">Ver sabores</button>
-</div>
-</div>
-
-</div>
-
-</div>
-
-<!-- SOBRE -->
-
-<div id="sobre" class="container reveal">
-
-<h2 class="section-title">Sobre o Ateliê</h2>
-
-<div class="linha-dourada"></div>
-
-<div class="feature">
-
-<img src="tradicional.png">
-
-<div>
-
-<h2>Produção Artesanal</h2>
-
-<p>Cada brigadeiro do Ateliê 27 é produzido artesanalmente com ingredientes selecionados, garantindo textura cremosa e sabor equilibrado.</p>
-
-</div>
-
-</div>
-
-</div>
 
 <!-- CARDÁPIO -->
 
@@ -436,6 +299,8 @@ Ver Cardápio
 
 <div class="menu">
 
+<!-- TRADICIONAIS -->
+
 <div class="card reveal tradicional">
 <img src="tradicional.png">
 <h3>Tradicional</h3>
@@ -443,18 +308,93 @@ Ver Cardápio
 <p class="valor">R$ 2,80</p>
 </div>
 
+<div class="card reveal tradicional">
+<img src="casadinho.jpg">
+<h3>Casadinho</h3>
+<p class="descricao">Brigadeiro tradicional com leite em pó.</p>
+<p class="valor">R$ 3,00</p>
+</div>
+
+<div class="card reveal tradicional">
+<img src="coco.jpg">
+<h3>Beijinho</h3>
+<p class="descricao">Leite condensado com coco selecionado.</p>
+<p class="valor">R$ 3,10</p>
+</div>
+
+<!-- ESPECIAIS -->
+
 <div class="card reveal especial">
 <img src="limao.png">
 <h3>Limão</h3>
-<p class="descricao">Notas cítricas suaves.</p>
+<p class="descricao">Notas cítricas suaves e equilibradas.</p>
 <p class="valor">R$ 3,20</p>
 </div>
+
+<div class="card reveal especial">
+<img src="maracuja.jpeg">
+<h3>Maracujá</h3>
+<p class="descricao">Sabor tropical com leve acidez.</p>
+<p class="valor">R$ 3,20</p>
+</div>
+
+<div class="card reveal especial">
+<img src="ninho.jpg">
+<h3>Ninho</h3>
+<p class="descricao">Leite em pó extremamente cremoso.</p>
+<p class="valor">R$ 3,20</p>
+</div>
+
+<div class="card reveal especial">
+<img src="churros.jpg">
+<h3>Churros</h3>
+<p class="descricao">Açúcar, canela e recheio de doce de leite.</p>
+<p class="valor">R$ 3,30</p>
+</div>
+
+<div class="card reveal especial">
+<img src="black.png">
+<h3>Black Velvet</h3>
+<p class="descricao">Chocolate intenso 100% cacau.</p>
+<p class="valor">R$ 3,50</p>
+</div>
+
+<!-- PREMIUM -->
 
 <div class="card reveal premium">
 <img src="ninho-nutella.png">
 <h3>Ninho com Nutella</h3>
-<p class="descricao">Leite em pó com recheio cremoso.</p>
+<p class="descricao">Leite em pó com recheio cremoso de avelã.</p>
 <p class="valor">R$ 3,80</p>
+</div>
+
+</div>
+
+</div>
+
+<!-- ADICIONAIS -->
+
+<div class="container">
+
+<h2 class="section-title">Adicionais</h2>
+
+<div class="linha-dourada"></div>
+
+<div class="info-grid">
+
+<div class="info-card">
+<h3>Coloridos</h3>
+<p>+ R$0,10 por unidade</p>
+</div>
+
+<div class="info-card">
+<h3>Carimbo</h3>
+<p>+ R$0,05 por unidade</p>
+</div>
+
+<div class="info-card">
+<h3>Formato</h3>
+<p>+ R$0,10 por unidade</p>
 </div>
 
 </div>
@@ -463,25 +403,25 @@ Ver Cardápio
 
 <!-- CAIXAS -->
 
-<div id="personalizacao" class="container reveal">
+<div id="caixas" class="container">
 
 <h2 class="section-title">Caixas Personalizadas</h2>
 
 <div class="linha-dourada"></div>
 
-<div class="box-grid">
+<div class="info-grid">
 
-<div class="box-card">
+<div class="info-card">
 <h3>25 unidades</h3>
 <p>Até 1 sabor</p>
 </div>
 
-<div class="box-card">
+<div class="info-card">
 <h3>50 unidades</h3>
 <p>Até 2 sabores</p>
 </div>
 
-<div class="box-card">
+<div class="info-card">
 <h3>100 unidades</h3>
 <p>Até 4 sabores</p>
 </div>
@@ -490,50 +430,104 @@ Ver Cardápio
 
 </div>
 
-<!-- CONTATO -->
+<!-- VALORES -->
 
-<div id="contato" class="contact">
+<div class="container">
 
-<h2 class="section-title">Contato</h2>
+<h2 class="section-title">Valores das Caixas</h2>
 
 <div class="linha-dourada"></div>
 
-<p><strong>Telefone / WhatsApp</strong></p>
+<div class="info-grid">
 
-<p>(47) 9944-5543</p>
+<div class="info-card">
+<h3>Tradicionais</h3>
+<p>25 – R$65</p>
+<p>50 – R$110</p>
+<p>100 – R$200</p>
+</div>
 
-<p><strong>Email</strong></p>
+<div class="info-card">
+<h3>Especiais</h3>
+<p>25 – R$77</p>
+<p>50 – R$130</p>
+<p>100 – R$220</p>
+</div>
 
-<p>atelie27.doceria@gmail.com</p>
+<div class="info-card">
+<h3>Premium</h3>
+<p>25 – R$90</p>
+<p>50 – R$165</p>
+<p>100 – R$300</p>
+</div>
 
 </div>
 
+</div>
+
+<!-- INFORMAÇÕES -->
+
+<div id="informacoes" class="container">
+
+<h2 class="section-title">Informações Importantes</h2>
+
+<div class="linha-dourada"></div>
+
+<div class="info-grid">
+
+<div class="info-card">
+<p>Produção sob encomenda</p>
+<p>Sabores respeitam limite de cada caixa</p>
+</div>
+
+<div class="info-card">
+<p>Pedido confirmado com 50% de sinal</p>
+<p>Prazo mínimo: 48h</p>
+</div>
+
+<div class="info-card">
+<p>Retiradas das 14h às 18h</p>
+<p>Não realizamos entregas</p>
+</div>
+
+</div>
+
+</div>
+
+<!-- CONTATO -->
+
+<div id="contato" class="container" style="text-align:center">
+
+<h2 class="section-title">Fazer Pedido</h2>
+
+<div class="linha-dourada"></div>
+
+<p>Entre em contato diretamente pelo WhatsApp para realizar sua encomenda.</p>
+
 <a class="whatsapp" href="https://wa.me/554799445543" target="_blank">
-WhatsApp
+Falar no WhatsApp
 </a>
 
-<script>
+</div>
 
-/* SCROLL SUAVE */
+<script>
 
 function scrollSection(id){
 document.getElementById(id).scrollIntoView({behavior:"smooth"});
 }
 
-/* REVEAL ANIMATION */
-
-const reveals = document.querySelectorAll(".reveal");
-const linhas = document.querySelectorAll(".linha-dourada");
+const reveals=document.querySelectorAll(".reveal");
+const linhas=document.querySelectorAll(".linha-dourada");
 
 function reveal(){
 
-let windowHeight = window.innerHeight;
+let windowHeight=window.innerHeight;
 
 reveals.forEach(el=>{
 
-let top = el.getBoundingClientRect().top;
+let top=el.getBoundingClientRect().top;
 
-if(top < windowHeight - 100){
+if(top<windowHeight-100){
 el.classList.add("show");
 }
 
@@ -541,9 +535,9 @@ el.classList.add("show");
 
 linhas.forEach(l=>{
 
-let top = l.getBoundingClientRect().top;
+let top=l.getBoundingClientRect().top;
 
-if(top < windowHeight - 100){
+if(top<windowHeight-100){
 l.classList.add("show");
 }
 
@@ -551,23 +545,21 @@ l.classList.add("show");
 
 }
 
-window.addEventListener("scroll", reveal);
+window.addEventListener("scroll",reveal);
 
 reveal();
 
-/* FILTRO CARDÁPIO */
+function filtrar(cat){
 
-function filtrar(categoria){
-
-const cards = document.querySelectorAll(".card");
+const cards=document.querySelectorAll(".card");
 
 cards.forEach(card=>{
 
-if(categoria === "all"){
+if(cat==="all"){
 card.style.display="block";
 }
 
-else if(card.classList.contains(categoria)){
+else if(card.classList.contains(cat)){
 card.style.display="block";
 }
 
