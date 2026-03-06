@@ -25,6 +25,7 @@ body{
 font-family:'Sirenik',serif;
 background:#F4ECDA;
 color:#3A332C;
+overflow-x:hidden;
 }
 
 /* NAVBAR */
@@ -47,6 +48,7 @@ text-decoration:none;
 margin-left:30px;
 color:#4b280a;
 font-size:18px;
+transition:.3s;
 }
 
 .navbar a:hover{
@@ -70,18 +72,13 @@ width:420px;
 margin-bottom:25px;
 }
 
-.linha-dourada{
-width:120px;
-height:2px;
-background:#C7A247;
-margin:25px auto;
-}
-
 .hero p{
 font-size:22px;
 max-width:600px;
 margin-bottom:40px;
 }
+
+/* BOTÕES */
 
 .btn{
 background:#C7A247;
@@ -91,11 +88,25 @@ border-radius:40px;
 font-size:18px;
 cursor:pointer;
 color:#4b280a;
-transition:0.3s;
+transition:.3s;
 }
 
 .btn:hover{
 transform:translateY(-3px);
+}
+
+/* LINHA DOURADA ANIMADA */
+
+.linha-dourada{
+width:0;
+height:2px;
+background:#C7A247;
+margin:25px auto;
+transition:1s;
+}
+
+.linha-dourada.show{
+width:120px;
 }
 
 /* CONTAINER */
@@ -115,13 +126,7 @@ font-size:52px;
 margin-bottom:20px;
 }
 
-.subtitle{
-text-align:center;
-font-size:20px;
-margin-bottom:60px;
-}
-
-/* CARDS HOME */
+/* HOME CARDS */
 
 .home-grid{
 display:grid;
@@ -137,11 +142,14 @@ padding:40px;
 border-radius:25px;
 background:#FAF4E8;
 box-shadow:0 15px 40px rgba(0,0,0,0.06);
-transition:0.4s;
+transition:.4s;
+opacity:0;
+transform:translateY(40px);
 }
 
-.home-card:hover{
-transform:translateY(-6px);
+.home-card.show{
+opacity:1;
+transform:translateY(0);
 }
 
 .home-card img{
@@ -154,27 +162,13 @@ font-size:30px;
 margin-bottom:10px;
 }
 
-.home-card p{
-font-size:18px;
-margin-bottom:15px;
-}
-
-.home-card button{
-background:#C7A247;
-border:none;
-padding:12px 26px;
-border-radius:30px;
-cursor:pointer;
-}
-
-/* SEÇÕES ALTERNADAS */
+/* FEATURE */
 
 .feature{
 display:grid;
 grid-template-columns:1fr 1fr;
 gap:80px;
 align-items:center;
-margin-bottom:120px;
 }
 
 .feature img{
@@ -187,9 +181,27 @@ font-size:40px;
 margin-bottom:15px;
 }
 
-.feature p{
-font-size:19px;
-line-height:1.6;
+/* FILTRO CARDÁPIO */
+
+.filtros{
+text-align:center;
+margin-bottom:40px;
+}
+
+.filtros button{
+margin:10px;
+padding:12px 26px;
+border:none;
+border-radius:30px;
+background:#EADFC7;
+cursor:pointer;
+font-size:16px;
+transition:.3s;
+}
+
+.filtros button:hover{
+background:#C7A247;
+color:white;
 }
 
 /* CARDÁPIO */
@@ -205,7 +217,14 @@ background:#FAF4E8;
 border-radius:25px;
 padding:25px;
 box-shadow:0 10px 30px rgba(0,0,0,0.05);
-transition:0.3s;
+transition:.4s;
+opacity:0;
+transform:translateY(40px);
+}
+
+.card.show{
+opacity:1;
+transform:translateY(0);
 }
 
 .card:hover{
@@ -250,11 +269,6 @@ padding:35px;
 border-radius:25px;
 text-align:center;
 box-shadow:0 10px 30px rgba(0,0,0,0.05);
-}
-
-.box-card h3{
-font-size:28px;
-margin-bottom:10px;
 }
 
 /* CONTATO */
@@ -329,7 +343,7 @@ font-size:38px;
 <div>
 <a href="#sobre">Sobre</a>
 <a href="#cardapio">Cardápio</a>
-<a href="#personalizacao">Personalização</a>
+<a href="#personalizacao">Caixas</a>
 <a href="#contato">Contato</a>
 </div>
 
@@ -345,78 +359,34 @@ font-size:38px;
 
 <p>Brigadeiros artesanais feitos para transformar momentos simples em experiências especiais.</p>
 
-<button class="btn" onclick="document.getElementById('sobre').scrollIntoView()">Conheça o Ateliê</button>
+<button class="btn" onclick="scrollSection('cardapio')">
+Ver Cardápio
+</button>
 
 </section>
 
-<!-- HOME CARDS -->
+<!-- HOME -->
 
 <div class="container">
 
 <div class="home-grid">
 
-<div class="home-card">
-
+<div class="home-card reveal">
 <img src="tradicional.png">
-
 <div>
-
 <h3>Sobre o Ateliê</h3>
-
-<p>Conheça o cuidado artesanal por trás de cada brigadeiro.</p>
-
-<button onclick="scrollSection('sobre')">Saiba mais</button>
-
+<p>Conheça a produção artesanal por trás de cada brigadeiro.</p>
+<button class="btn" onclick="scrollSection('sobre')">Explorar</button>
+</div>
 </div>
 
-</div>
-
-<div class="home-card">
-
+<div class="home-card reveal">
 <img src="ninho-nutella.png">
-
 <div>
-
 <h3>Cardápio</h3>
-
-<p>Explore nossos sabores tradicionais, especiais e premium.</p>
-
-<button onclick="scrollSection('cardapio')">Ver cardápio</button>
-
+<p>Sabores tradicionais, especiais e premium.</p>
+<button class="btn" onclick="scrollSection('cardapio')">Ver sabores</button>
 </div>
-
-</div>
-
-<div class="home-card">
-
-<img src="caixa.jpg">
-
-<div>
-
-<h3>Personalização</h3>
-
-<p>Caixas elegantes ideais para presentes e eventos.</p>
-
-<button onclick="scrollSection('personalizacao')">Ver opções</button>
-
-</div>
-
-</div>
-
-<div class="home-card">
-
-<img src="black.png">
-
-<div>
-
-<h3>Entre em contato</h3>
-
-<p>Faça seu pedido ou tire dúvidas rapidamente.</p>
-
-<button onclick="scrollSection('contato')">Falar conosco</button>
-
-</div>
-
 </div>
 
 </div>
@@ -425,7 +395,11 @@ font-size:38px;
 
 <!-- SOBRE -->
 
-<div id="sobre" class="container">
+<div id="sobre" class="container reveal">
+
+<h2 class="section-title">Sobre o Ateliê</h2>
+
+<div class="linha-dourada"></div>
 
 <div class="feature">
 
@@ -433,9 +407,9 @@ font-size:38px;
 
 <div>
 
-<h2>Brigadeiros Artesanais</h2>
+<h2>Produção Artesanal</h2>
 
-<p>Cada brigadeiro do Ateliê 27 é produzido artesanalmente, utilizando ingredientes selecionados e técnicas que garantem textura cremosa e sabor equilibrado.</p>
+<p>Cada brigadeiro do Ateliê 27 é produzido artesanalmente com ingredientes selecionados, garantindo textura cremosa e sabor equilibrado.</p>
 
 </div>
 
@@ -447,80 +421,69 @@ font-size:38px;
 
 <div id="cardapio" class="container">
 
-<h2 class="section-title">Sabores</h2>
+<h2 class="section-title">Cardápio</h2>
+
+<div class="linha-dourada"></div>
+
+<div class="filtros">
+
+<button onclick="filtrar('all')">Todos</button>
+<button onclick="filtrar('tradicional')">Tradicionais</button>
+<button onclick="filtrar('especial')">Especiais</button>
+<button onclick="filtrar('premium')">Premium</button>
+
+</div>
 
 <div class="menu">
 
-<div class="card">
-
+<div class="card reveal tradicional">
 <img src="tradicional.png">
-
 <h3>Tradicional</h3>
-
 <p class="descricao">Chocolate 50% cacau com granulado macio.</p>
-
 <p class="valor">R$ 2,80</p>
-
 </div>
 
-<div class="card">
-
+<div class="card reveal especial">
 <img src="limao.png">
-
 <h3>Limão</h3>
-
-<p class="descricao">Notas cítricas suaves e equilibradas.</p>
-
+<p class="descricao">Notas cítricas suaves.</p>
 <p class="valor">R$ 3,20</p>
-
 </div>
 
-<div class="card">
-
-<img src="black.png">
-
-<h3>Black Velvet</h3>
-
-<p class="descricao">Chocolate intenso e sofisticado.</p>
-
-<p class="valor">R$ 3,50</p>
-
+<div class="card reveal premium">
+<img src="ninho-nutella.png">
+<h3>Ninho com Nutella</h3>
+<p class="descricao">Leite em pó com recheio cremoso.</p>
+<p class="valor">R$ 3,80</p>
 </div>
 
 </div>
 
 </div>
 
-<!-- PERSONALIZAÇÃO -->
+<!-- CAIXAS -->
 
-<div id="personalizacao" class="container">
+<div id="personalizacao" class="container reveal">
 
 <h2 class="section-title">Caixas Personalizadas</h2>
+
+<div class="linha-dourada"></div>
 
 <div class="box-grid">
 
 <div class="box-card">
-
 <h3>25 unidades</h3>
-
 <p>Até 1 sabor</p>
-
 </div>
 
 <div class="box-card">
-
 <h3>50 unidades</h3>
-
 <p>Até 2 sabores</p>
-
 </div>
 
 <div class="box-card">
-
 <h3>100 unidades</h3>
-
 <p>Até 4 sabores</p>
-
 </div>
 
 </div>
@@ -532,6 +495,8 @@ font-size:38px;
 <div id="contato" class="contact">
 
 <h2 class="section-title">Contato</h2>
+
+<div class="linha-dourada"></div>
 
 <p><strong>Telefone / WhatsApp</strong></p>
 
@@ -549,9 +514,68 @@ WhatsApp
 
 <script>
 
-function scrollSection(id){
+/* SCROLL SUAVE */
 
+function scrollSection(id){
 document.getElementById(id).scrollIntoView({behavior:"smooth"});
+}
+
+/* REVEAL ANIMATION */
+
+const reveals = document.querySelectorAll(".reveal");
+const linhas = document.querySelectorAll(".linha-dourada");
+
+function reveal(){
+
+let windowHeight = window.innerHeight;
+
+reveals.forEach(el=>{
+
+let top = el.getBoundingClientRect().top;
+
+if(top < windowHeight - 100){
+el.classList.add("show");
+}
+
+});
+
+linhas.forEach(l=>{
+
+let top = l.getBoundingClientRect().top;
+
+if(top < windowHeight - 100){
+l.classList.add("show");
+}
+
+});
+
+}
+
+window.addEventListener("scroll", reveal);
+
+reveal();
+
+/* FILTRO CARDÁPIO */
+
+function filtrar(categoria){
+
+const cards = document.querySelectorAll(".card");
+
+cards.forEach(card=>{
+
+if(categoria === "all"){
+card.style.display="block";
+}
+
+else if(card.classList.contains(categoria)){
+card.style.display="block";
+}
+
+else{
+card.style.display="none";
+}
+
+});
 
 }
 
